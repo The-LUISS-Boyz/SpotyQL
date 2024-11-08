@@ -58,12 +58,20 @@ class Configuration:
   def window_height(self):
     return self.data["window"]["height"]
   
+  # flags
   @property
   def done_migrations(self):
     return self.data.get("done_migrations", False)
   @done_migrations.setter
   def done_migrations(self, value: bool):
     self.data["done_migrations"] = value
+  
+  @property
+  def done_population(self):
+    return self.data.get("done_population", False)
+  @done_population.setter
+  def done_population(self, value: bool):
+    self.data["done_population"] = value
   
   def save(self):
     dump(

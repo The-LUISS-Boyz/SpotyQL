@@ -47,7 +47,7 @@ function toggleBox(index) {
     }
 }
 
-  function addResultBox(button) {
+  function addResultBox(button, query) {
     const resultBoxContainer = button.parentNode.querySelector('.result-box-container');
 
     // Check if a result box already exists
@@ -63,8 +63,13 @@ function toggleBox(index) {
     // Add content with the existing close button design
     resultBox.innerHTML = `
         <span class="close-btn" onclick="closeResultBox(this)">X</span>
-        <pre><code class="language-sql">Result: SELECT name, age FROM users WHERE age > 30 ORDER BY age DESC;</code></pre>
+        <pre><code>Executing...</code></pre>
     `;
+
+    // Await query execution
+    window.pywebview.api.execute_query(query).then(
+        result => resultBox.innerHTML = result
+    )
 
     // Append the result box to the container
     resultBoxContainer.appendChild(resultBox);

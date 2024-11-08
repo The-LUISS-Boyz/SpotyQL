@@ -36,7 +36,7 @@
               <p class="box-description">{{query.description}}</p>
               <!-- SQL Code with Prism Syntax Highlighting -->
               <pre><code class="language-sql">{{query.code}}</code></pre> 
-              <button class="box-button" onclick="addResultBox(this)">Execute Query</button>               
+              <button class="box-button" onclick="addResultBox(this, {{index}})">Execute Query</button>               
               <div class="result-box-container"></div>
             </div>
           </div>

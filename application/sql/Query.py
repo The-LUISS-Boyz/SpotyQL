@@ -1,4 +1,5 @@
 import sqlite3
+from tabulate import tabulate
 
 class Query:
   name: str
@@ -16,4 +17,17 @@ class Query:
       return file.read()
     
   def execute(self, connection: sqlite3.Connection):
-    return connection.executescript(self.code).fetchall()
+    cursor = connection.cursor().executescript(self.code)
+    return cursor.fetchall()
+  
+  def execute_statement(self, connection: sqlite3.Connection):
+    cursor = connection.cursor().execute(self.code)
+    
+    rows = cursor.fetchall()
+    columns = [d[0] for d in cursor.description]
+    
+    return tabulate(rows, headers=columns, tablefmt="grid")
+    
+  
+    
+    

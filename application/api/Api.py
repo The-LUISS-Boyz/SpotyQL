@@ -1,4 +1,4 @@
-from .functions import get_info, on_load, get_context
+from .functions import get_info, on_load, get_context, execute_query
 from sql import get_connection
 
 class Api:
@@ -13,3 +13,6 @@ class Api:
   
   def get_context(self):
     return get_context()
+
+  def execute_query(self, index):
+    return execute_query(get_connection(), index)

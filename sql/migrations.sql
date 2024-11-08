@@ -1,9 +1,9 @@
-CREATE TABLE IF NOT EXISTS track (
-    name VARCHAR(100) PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS Track (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(100),
     streams INT,
     release_date DATE,
-    vendor_name VARCHAR(100),
-    FOREIGN KEY (vendor_name) REFERENCES Vendor(name)
+    cover_url VARCHAR(200)
 );
 
 CREATE TABLE IF NOT EXISTS Artist (
@@ -27,14 +27,29 @@ CREATE TABLE IF NOT EXISTS MusicalStats (
     instrumentalness INT,
     liveness INT,
     speechiness INT,
-    track_name VARCHAR(100),
-    FOREIGN KEY (track_name) REFERENCES track(name)
+    track_id INT,
+    FOREIGN KEY (track_id) REFERENCES Track(id)
 );
 
 CREATE TABLE IF NOT EXISTS Track_Artist (
     artist_id INT,
-    track_id VARCHAR(100),
+    track_id INT,
     FOREIGN KEY (artist_id) REFERENCES Artist(id),
-    FOREIGN KEY (track_id) REFERENCES track(name),
-    PRIMARY KEY (artist_id, track_id)
+    FOREIGN KEY (track_id) REFERENCES Track(id)
+);
+
+CREATE TABLE IF NOT EXISTS Track_Playlist (
+    count INT,
+    track_id INT,
+    vendor_name VARCHAR(100),
+    FOREIGN KEY (track_id) REFERENCES Track(id),
+    FOREIGN KEY (vendor_name) REFERENCES Vendor(name)
+);
+
+CREATE TABLE IF NOT EXISTS Track_Chart (
+    count INT,
+    track_id INT,
+    vendor_name VARCHAR(100),
+    FOREIGN KEY (track_id) REFERENCES Track(id),
+    FOREIGN KEY (vendor_name) REFERENCES Vendor(name)
 );

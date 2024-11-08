@@ -20,7 +20,7 @@
     },
     "info": {
         "name": "SpotyQL",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "authors": [
             {
                 "name": "Angelo Misnik",
@@ -48,5 +48,6 @@
         "width": 1280,
         "height": 720
     },
-    "done_migrations": true
+    "done_migrations": true,
+    "done_population": true
 }
