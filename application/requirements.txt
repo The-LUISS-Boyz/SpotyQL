@@ -1,0 +1,4 @@
+pywebview
+uvicorn
+jinja2
+fastapi
