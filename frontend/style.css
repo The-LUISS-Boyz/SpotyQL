@@ -1,0 +1,458 @@
+    :root {
+        --spotify-green: #1db954;
+        --dark-bg: #191414;
+        --light-gray: #b3b3b3;
+        --white: #ffffff;
+      }
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--dark-bg);
+        color: var(--white);
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .body-content {
+        display: flex;
+        flex-grow: 1;
+        overflow-y: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+   
+      
+  
+      .welcome-container {
+        position: relative;
+        width: 300px;
+        padding: 30px;
+        background-color: #282828;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.4s ease-in-out;
+        overflow: hidden;
+      }
+      
+      
+      .welcome-container:hover {
+        transform: scale(1.02); 
+      }
+  
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: var(--light-gray);
+        font-size: 24px; 
+        font-weight: 600; 
+        font-family: 'Poppins', sans-serif; 
+        cursor: pointer;
+        transition: color 0.2s, transform 0.3s ease;
+        border-radius: 50%; 
+        padding: 5px;
+      }
+  
+      .close-btn:hover {
+        color: var(--spotify-green);
+        transform: scale(1.2); 
+      }
+  
+      .welcome-title {
+        font-size: 30px;
+        color: var(--spotify-green);
+        margin: 20px;
+      }
+      #title-name {
+        font-size: 45px;
+      }
+
+      .welcome-text {
+        font-size: 20px;
+        color: var(--light-gray);
+        margin: 10px;
+      }
+  
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #282828;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        flex-shrink: 0;
+        width: 100%; /* Make it span the full width of the screen */
+        z-index: 1000; /* Ensure the header is on top of other content */
+        box-sizing: border-box; /* Include padding in width calculation */
+      }
+      
+      .logo {
+        font-size: 35px;
+        font-weight: 600;
+        color: var(--white);
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      
+      .logo:hover {
+        color: var(--spotify-green);
+      }
+      
+      /* Navigation Menu */
+      .nav-menu {
+        display: flex;
+        gap: 20px;
+      }
+      
+      .nav-item {
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif; 
+        color: var(--white);
+        text-decoration: none;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-item:hover {
+        color: var(--spotify-green);
+      }
+      
+      /* Responsive Design for Mobile */
+      @media (max-width: 768px) {
+        .nav-menu {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    
+      
+
+/* Styling for Credits Page */
+.container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack the boxes vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    margin-top: 80px; /* To ensure the content isn't hidden behind the fixed header */
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .credits-container, .text-box {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #282828;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease-in-out;
+    max-width: 600px; /* Adjust max-width for both boxes */
+    width: 80%; /* Make them responsive */
+    margin-bottom: 20px; /* Space between the two boxes */
+  }
+  
+  .credits-container:hover, .text-box:hover {
+    transform: scale(1.02);
+  }
+  
+  .credits-title, .text-title {
+    font-size: 36px;
+    color: #1db954;
+    margin: 0px 0 20px 0;
+  }
+  
+  .team-member, .rep-text {
+    font-size: 20px;
+    color: #b3b3b3;
+    margin: 10px 10px;
+  }
+  
+  .team-member strong {
+    color: #ffffff;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px; /* Adjust padding for mobile */
+    }
+  
+    .credits-container, .text-box {
+      max-width: 100%; /* Allow full width on smaller screens */
+      margin-bottom: 20px; /* Ensure space between the two boxes */
+    }
+  }
+
+  .queries-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 85%;
+    /* padding-top: 700px; TODO: fix body with flexbox */
+  }
+
+ /* Styling for the Discover Page */
+.discover-container {
+    padding: 20px;
+    margin-top: 80px;
+  }
+  
+  .discover-container,
+  .expandable-box {
+      width: 80%; /* or another fixed value, like 600px */
+      margin: 0 auto; /* Center the box */
+  }
+  
+  .expandable-box:hover {
+    transform: scale(1.02); 
+    background-color: #333333; /* Adjust as needed */
+    border-radius: 8px; /* Preserve rounded corners on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3)
+  }
+
+  .expandable-box {
+    background-color: #282828;
+    border-radius: 8px; 
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: color 0.2s, transform 0.3s ease;
+
+  }
+  
+  .box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .box-title {
+    color: #1db954;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .vish-icon {
+    font-size: 24px;
+    color: #b3b3b3;
+  }
+  
+  .box-content {
+    height: 0; /* Start with zero height */
+    overflow: hidden; /* Hide content when the box is collapsed */
+    padding: 0 15px;
+    transition: height 0.5s ease-out, padding 0.5s ease-out; /* Smooth transition for height and padding */
+  }
+  
+  .box-content p {
+    margin: 10px 0;
+  }
+  
+  .box-description {
+    font-size: 16px;
+    color: #b3b3b3;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* SQL Code styling */
+  pre code {
+    color: #ffffff; /* Default color for unstyled text */
+    display: block;
+    text-align: left; /* Ensure alignment to the left */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove padding to avoid shifting */
+    white-space: pre-wrap; /* Wrap text within code block */
+    word-wrap: break-word;
+    
+}
+
+pre {
+    background-color: #2c2c2c;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto; /* Horizontal scroll if content is too wide */
+    overflow-y: auto; /* Vertical scroll if content is too tall */
+    max-height: 300px; /* Adjust height as needed */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    
+}
+
+pre code {
+    display: block;
+    white-space: pre; /* Preserves line breaks without adding extra spaces */
+    padding-left: 0; /* Ensure no extra padding */
+}
+  
+  .token.keyword {
+    color: #ff79c6;
+  }
+  
+  .token.operator {
+    color: #8be9fd;
+    background-color: #2c2c2c;
+  }
+  
+  .token.variable {
+    color: #50fa7b;
+  }
+  
+  .token.comment, .token.other {
+    color: #b2b2b2;
+  }
+  
+  .token.string {
+    color: #f1fa8c;  /* Light yellow for string literals */
+  }
+  
+  .token.number {
+    color: #bd93f9;  /* Light purple for numbers */
+  }
+  pre, pre code, .token {
+    text-shadow: none !important;
+}
+
+pre code {
+    color: #ffffff !important; /* Default color for any unstyled text */
+}
+
+  pre[class*="language-"] {
+    background-color: #2c2c2c;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    text-shadow: none;  /* Remove text shadow from entire code block */
+    text-align: left;   /* Align content to the left */
+}
+  
+  /* Button Styling */
+  .box-button {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    background-color: #1db954;
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .box-button:hover {
+    background-color: #15883e;
+  }
+  
+  /* Hover Effects */
+  .box-header:hover {
+    background-color: #333333; /* Adjust as needed */
+    border-radius: 8px; /* Preserve rounded corners on hover */}
+  
+  .box-header:active {
+    background-color: #1db954;
+    color: #fff;
+  }
+      /* Styling for Logger Page */
+      .logger-container {
+        padding: 40px 20px;
+        text-align: center;
+        background-color: #282828;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.4s ease-in-out;
+        max-width: 600px;
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      .logger-container:hover {
+        transform: scale(1.02);
+      }
+
+      .logger-title {
+        font-size: 36px;
+        color: #1db954;
+        margin: 0px 0 20px 0;
+      }
+
+      .log-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .log-item {
+        font-size: 20px;
+        color: #b3b3b3;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #333333;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .log-item:hover {
+        transform: scale(1.02);
+      }
+
+      .log-timestamp {
+        display: block;
+        font-size: 14px;
+        color: #8e8e8e;
+        margin-bottom: 5px;
+      }
+
+      .log-message {
+        font-size: 18px;
+        color: #ffffff;
+      }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .inner-box {
+      flex-direction: column; /* Stack the inner boxes on smaller screens */
+      gap: 10px;
+    }
+  
+    .box-item {
+      width: 100%; /* Make the inner boxes full width */
+    }
+  
+    .box-button {
+      width: 100%; /* Make the button full width on mobile */
+    }
+  }

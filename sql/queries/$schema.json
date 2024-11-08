@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Identify Artists with Consistently Popular Songs Across Multiple Years",
+    "description": "Retrieve artists who have had songs in the top 50 Spotify charts for at least three different years, along with the number of years they've charted.",
+    "file_path": "artists_popular_songs.sql"
+  },
+  {
+    "name": "Songs with High Danceability and Valence that Are Also Chart-Toppers",
+    "description": "Identify songs with danceability and valence above 70 and ranked within the top 20 on Spotify.",
+    "file_path": "high_danceability_valence.sql"
+  },
+  {
+    "name": "Cross-Platform Popularity and Musical Characteristics Analysis",
+    "description": "For songs that appear in the top 50 on all platforms (stored in Vendor and Track relationships), display their musical attributes.",
+    "file_path": "cross_platform_popularity.sql"
+  },
+  {
+    "name": "Analyzing Year-over-Year Growth in Popularity",
+    "description": "Compute the year-over-year growth in streams.",
+    "file_path": "yearly_growth_analysis.sql"
+  },
+  {
+    "name": "Predicting Chart Success with Musical Attributes",
+    "description": "Retrieve average values of danceability, energy, valence, and speechiness for songs in different chart ranges.",
+    "file_path": "chart_success_prediction.sql"
+  },
+  {
+    "name": "Top 5 Most-Streamed Artists by Platform",
+    "description": "For each platform (vendor), find the top 5 most-streamed artists and their total streams.",
+    "file_path": "top_artists_by_platform.sql"
+  },
+  {
+    "name": "Comparing Energy and Acousticness Levels Over Time",
+    "description": "Calculate the average energy and acousticness for songs released each year.",
+    "file_path": "energy_acousticness_over_time.sql"
+  },
+  {
+    "name": "Artists with High Collaboration Rates and Their Impact on Streams",
+    "description": "Find artists with an average artist_count > 2 and the average streams of their songs.",
+    "file_path": "high_collaboration_impact.sql"
+  },
+  {
+    "name": "Songs with High Shazam Rankings and Their Spotify Streams",
+    "description": "Identify songs in the top 10 Shazam charts and compare their Spotify streams.",
+    "file_path": "shazam_spotify_comparison.sql"
+  },
+  {
+    "name": "Top 5 Tracks Based on Total Streams with Platform Metrics",
+    "description": "Identify Top 5 most streamed songs and show how popular the track is across platforms.",
+    "file_path": "top_tracks_platform_metrics.sql"
+  },
+  {
+    "name": "Comprehensive Analysis of Top 5 Tracks and Their Growth Trends",
+    "description": "The query identifies the top 5 tracks by total streams, analyzes their platform presence, examines their musical attributes, and calculates their year-over-year growth in streams.",
+    "file_path": "top_tracks_growth_trends.sql"
+  }
+]

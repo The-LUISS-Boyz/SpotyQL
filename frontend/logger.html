@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+  <title>{{name}} ({{version}})</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">{{name}}</div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-item">HOME</a>
+      <a href="discover.html" class="nav-item">DISCOVER</a>
+      <a href="credits.html" class="nav-item">CREDITS</a>
+      <a href="logger.html" class="nav-item">LOGGER</a>
+    </nav>
+  </header>
+
+  <div class="body-content">
+    <div class="logger-container">
+      <h1 class="logger-title">Log Entries</h1>
+      <ul class="log-list">
+        {% for log in logs %}
+          <li class="log-item">
+            <span class="log-timestamp">{{ log.timestamp }}</span>
+            <span class="log-message">{{ log.message }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

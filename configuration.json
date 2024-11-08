@@ -1,0 +1,52 @@
+{
+    "frontend": {
+        "path": "./frontend/",
+        "_COMMENT": "todo: implement features"
+    },
+    "database": {
+        "type": "sqlite",
+        "_COMMENT": "for type sqlite set the sqlite.path variable",
+        "sqlite.path": "./spotyql.db",
+        "__COMMENT": "for type mysql set mysql properties to setup connection",
+        "mysql.host": "localhost",
+        "mysql.user": "root",
+        "mysql.password": "",
+        "mysql.database": "spotyql",
+        "sql.path": "./sql/"
+    },
+    "dataset": {
+        "path": "./dataset.csv",
+        "_COMMENT": "todo: implement features"
+    },
+    "info": {
+        "name": "SpotyQL",
+        "version": "0.0.1",
+        "authors": [
+            {
+                "name": "Angelo Misnik",
+                "matricola": "306971"
+            },
+            {
+                "name": "Tommaso Di Blasio",
+                "matricola": "306491"
+            },
+            {
+                "name": "Nicola Leone Ciardi",
+                "matricola": "295881"
+            },
+            {
+                "name": "Vincent Alessandro Calta",
+                "matricola": "N/A"
+            },
+            {
+                "name": "Emanuel Rizzo Rosas",
+                "matricola": "N/A"
+            }
+        ]
+    },
+    "window": {
+        "width": 1280,
+        "height": 720
+    },
+    "done_migrations": true
+}

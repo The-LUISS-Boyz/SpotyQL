@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+  <title>{{name}} ({{version}})</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">{{name}}</div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-item">HOME</a>
+      <a href="discover.html" class="nav-item">DISCOVER</a>
+      <a href="credits.html" class="nav-item">CREDITS</a>
+      <a href="logger.html" class="nav-item">LOGGER</a>
+    </nav>
+  </header>
+
+<div class="body-content">
+  <div class="credits-container">
+    <h1 class="credits-title">Credits</h1>
+    {% for author in authors %}
+      <p class="team-member"><strong>{{author.name}}</strong> - {{author.matricola}}</p>
+    {% endfor %}
+  </div>
+
+  <div class="text-box">
+    <h2 class="text-title">About This Project</h2>
+    <p class="rep-text">This project was created as part of a team assignment to showcase skills in web development and UI design. The goal is to create an interactive and user-friendly interface similar to popular music streaming platforms.</p>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
