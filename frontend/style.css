@@ -207,13 +207,13 @@
     flex-direction: column;
     height: 100%;
     width: 85%;
-    /* padding-top: 700px; TODO: fix body with flexbox */
+    padding-top: 20px;
   }
 
  /* Styling for the Discover Page */
 .discover-container {
-    padding: 20px;
     margin-top: 80px;
+    padding: 3px;
   }
   
   .discover-container,
