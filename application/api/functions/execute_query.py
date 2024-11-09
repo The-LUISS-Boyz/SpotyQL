@@ -22,20 +22,9 @@ def execute_query(connection, i):
 
 def execute_query_str(connection, str):
   try:
-    r = StrQuery(str).execute_statement(connection)
-    html = f"""
-<span class="close-btn" onclick="closeResultBox(this)">X</span>
-<pre><code>{r}</code></pre>
-    """
-    
-    return html
+    return StrQuery(str).execute_statement(connection)
   except SQLError as e:
-    html = f"""
-<span class="close-btn" onclick="closeResultBox(this)">X</span>
-<pre><code class="language-sql">{e}</code></pre>
-    """
-    
-    return html
+    return str(e)
   except Exception as e:
     raise e
     
