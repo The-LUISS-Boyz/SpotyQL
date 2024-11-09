@@ -71,6 +71,7 @@ function toggleBox(index) {
         result => resultBox.innerHTML = result
     )
 
+    
     // Append the result box to the container
     resultBoxContainer.appendChild(resultBox);
     console.log("Result box added.");
@@ -82,6 +83,46 @@ function toggleBox(index) {
         behavior: 'smooth'
     });
 }
+
+function addConsoleResultBox(button, textBox) {
+  const resultBoxContainer = document.querySelector('.console-result-box-container');
+
+  // Clear any existing result to avoid multiple boxes
+  resultBoxContainer.innerHTML = '';
+
+  // Get the query text from the textBox input
+  const query = textBox.value;
+
+  // Create a new div element for the result box
+  const resultBox = document.createElement('div');
+  resultBox.classList.add('console-result-box');
+
+  // Add a close button and placeholder text while query executes
+  resultBox.innerHTML = `
+      <span class="console-close-btn" onclick="closeConsoleResultBox(this)">X</span>
+      <pre><code>Executing...</code></pre>
+  `;
+
+  // Await execution of query using the query text
+  window.pywebview.api.execute_query_str(query).then(result => {
+      // Update the result box with the returned result
+      resultBox.innerHTML = `
+          <span class="console-close-btn" onclick="closeConsoleResultBox(this)">X</span>
+          <pre><code>${result}</code></pre>
+      `;
+  });
+
+  // Append the result box to the container
+  resultBoxContainer.appendChild(resultBox);
+  console.log("Console result box added.");
+}
+
+function closeConsoleResultBox(closeButton) {
+  closeButton.parentNode.remove();
+  console.log("Console result box removed.");
+}
+
+
 
 function closeResultBox(closeButton) {
     const resultBox = closeButton.parentNode;
@@ -96,4 +137,8 @@ function closeResultBox(closeButton) {
         top: 0,
         behavior: 'smooth'
     });
+}
+
+function openIndexPage() {
+  window.location.href = 'index.html';
 }
