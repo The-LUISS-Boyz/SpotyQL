@@ -1,4 +1,5 @@
 from .Query import Query
+from .StrQuery import StrQuery
 from .__loader__ import load_queries
 from utils import configuration
 from .variables import *
