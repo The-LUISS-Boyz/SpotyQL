@@ -3,8 +3,8 @@
 
 WITH YearlyStreams AS (
     SELECT 
-        EXTRACT(YEAR FROM t.release_date) AS release_year, 
-        SUM(t.streams) AS total_streams
+        strftime('%Y', t.release_date) AS release_year, 
+        SUM(t.streams) / 1000000 AS total_streams
     FROM track t
     GROUP BY release_year
 )
@@ -13,6 +13,6 @@ SELECT
     total_streams,
     LAG(total_streams) OVER (ORDER BY release_year) AS prev_year_streams,
     ((total_streams - LAG(total_streams) OVER (ORDER BY release_year)) 
-     / NULLIF(LAG(total_streams) OVER (ORDER BY release_year), 0)) * 100 AS year_over_year_growth
+     / NULLIF(LAG(total_streams) OVER (ORDER BY release_year), 0.0)) * 100.0 AS year_over_year_growth
 FROM YearlyStreams
 ORDER BY release_year;
