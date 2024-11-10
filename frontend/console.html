@@ -21,7 +21,7 @@
   
     <div class="center-content">
       <div class="console-search-container">
-        <input type="text" id="consoleQueryTextBox" class="console-search-bar" placeholder="INSERT YOUR QUERY HERE">
+        <input type="text" id="consoleQueryTextBox" class="console-search-bar" placeholder="INSERT YOUR QUERY HERE" onkeydown="handleEnter(event)">
         <button class="console-search-button" onclick="addConsoleResultBox(this, document.getElementById('consoleQueryTextBox'))">RUN</button>
         <div class="console-result-box-container"></div> 
       </div>

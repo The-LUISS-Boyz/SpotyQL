@@ -122,7 +122,15 @@ function closeConsoleResultBox(closeButton) {
   console.log("Console result box removed.");
 }
 
-
+function handleEnter(event) {
+    // Check if the Enter key (keyCode 13) was pressed
+    if (event.key === "Enter") {
+        // Call addConsoleResultBox, passing the text box as an argument
+        const textBox = event.target;
+        const button = document.querySelector('.console-search-button');
+        addConsoleResultBox(button, textBox);
+    }
+}
 
 function closeResultBox(closeButton) {
     const resultBox = closeButton.parentNode;

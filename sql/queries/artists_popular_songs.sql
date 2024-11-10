@@ -4,8 +4,8 @@
 SELECT a.name AS artist_name, COUNT(DISTINCT EXTRACT(YEAR FROM t.release_date)) AS years_in_top_50
 FROM Artist a
 JOIN Track_Artist ta ON a.id = ta.artist_id
-JOIN track t ON ta.track_id = t.name
-WHERE t.streams >= (SELECT streams FROM track ORDER BY streams DESC LIMIT 50)
+JOIN Track t ON ta.track_id = t.id  
+WHERE t.streams >= (SELECT streams FROM Track ORDER BY streams DESC LIMIT 50)
 GROUP BY a.name
 HAVING years_in_top_50 >= 3
 ORDER BY years_in_top_50 DESC;

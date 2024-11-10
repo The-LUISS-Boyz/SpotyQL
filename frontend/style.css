@@ -396,7 +396,7 @@ pre code {
         transition: transform 0.4s ease-in-out;
         max-width: 600px;
         width: 80%;
-        margin-bottom: 20px;
+        margin: 20px;
       }
 
       .logger-container:hover {
@@ -565,7 +565,7 @@ pre code {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 15px; /* Space above result box */
+  margin-top: 15px;
 }
 
 .console-result-box {
@@ -574,7 +574,7 @@ pre code {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   color: #f8f8f2;
-  width: 500px; /* Match width of the search bar */
+  width: 600px; 
   text-align: left;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -583,15 +583,19 @@ pre code {
 
 .console-close-btn {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 10px;
   color: var(--light-gray);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.2s, transform 0.3s ease;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .console-close-btn:hover {
   color: var(--spotify-green);
+  transform: scale(1.2);
 }
