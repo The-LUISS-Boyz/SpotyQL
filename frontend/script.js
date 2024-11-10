@@ -164,3 +164,25 @@ function toggleMenu() {
         hamburgerIcon.textContent = '☰'; // Change back to hamburger
     }
 }
+
+function checkScreenSize() {
+    const resizeMessage = document.getElementById("resizeMessage");
+    const mainContent = document.getElementById("mainContent");
+
+    // Show message if screen width is less than 768px
+    if (window.innerWidth < 768) {
+        resizeMessage.style.display = "flex";
+        mainContent.style.display = "none";
+    } else {
+        resizeMessage.style.display = "none";
+        mainContent.style.display = "block";
+    }
+}
+
+// Run checkScreenSize on page load and when resizing the window
+window.addEventListener("load", checkScreenSize);
+window.addEventListener("resize", checkScreenSize);
+
+// Run checkScreenSize on page load and when resizing the window
+window.onload = checkScreenSize;
+window.onresize = checkScreenSize;

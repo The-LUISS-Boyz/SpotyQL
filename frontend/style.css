@@ -193,24 +193,46 @@
   /* Responsive design for smaller screens */
   @media (max-width: 768px) {
     .container {
-      padding: 20px; /* Adjust padding for mobile */
+      padding: 20px; 
     }
   
     .credits-container, .text-box {
-      max-width: 100%; /* Allow full width on smaller screens */
-      margin-bottom: 20px; /* Ensure space between the two boxes */
+      max-width: 100%; 
+      margin-bottom: 20px; 
     }
   }
 
   .queries-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 85%;
-    padding-top: 20px;
-  }
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.discover-container {
+    width: 100%; 
+    margin-bottom: 10px; 
+}
+  
 
  /* Styling for the Discover Page */
+
+ .resize-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #282828;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+}
+
 .discover-container {
     margin-top: 80px;
     padding: 3px;
