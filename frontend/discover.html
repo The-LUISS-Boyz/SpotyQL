@@ -23,7 +23,12 @@
     </nav>
 </header>
 
-    <div class="body-content">
+<div id="resizeMessage" class="resize-message" style="display: none;">
+  <p>Please increase the screen size to view the content.</p>
+</div>
+
+
+    <div class="body-content" id="mainContent">
       <div class="queries-container">
         {% for query in queries %}
         {% set index = loop.index0 %}
@@ -46,6 +51,8 @@
         {% endfor %}
       </div>
     </div>
+
+    
 
     <!-- Include Prism.js JavaScript for syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
