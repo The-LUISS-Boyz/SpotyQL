@@ -8,16 +8,17 @@
   <title>{{name}} ({{version}})</title>
 </head>
 <body>
-    <header class="header">
-      <div class="logo">{{name}}</div>
-      <nav class="nav-menu">
+  <header class="header">
+    <div class="logo" onclick="openIndexPage()">{{name}}</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-menu">
         <a href="index.html" class="nav-item">HOME</a>
         <a href="discover.html" class="nav-item">DISCOVER</a>
         <a href="credits.html" class="nav-item">CREDITS</a>
         <a href="logger.html" class="nav-item">LOGGER</a>
         <a href="console.html" class="nav-item">CONSOLE</a>
-      </nav>
-    </header>
+    </nav>
+</header>
   
     <div class="center-content">
       <div class="console-search-container">

@@ -150,3 +150,17 @@ function closeResultBox(closeButton) {
 function openIndexPage() {
   window.location.href = 'index.html';
 }
+
+function toggleMenu() {
+    const menu = document.querySelector('.nav-menu');
+    const hamburgerIcon = document.querySelector('.hamburger');
+
+    menu.classList.toggle('show'); // Toggle visibility
+
+    // Switch between hamburger and X icons
+    if (menu.classList.contains('show')) {
+        hamburgerIcon.textContent = '✖'; // Change to "X"
+    } else {
+        hamburgerIcon.textContent = '☰'; // Change back to hamburger
+    }
+}
