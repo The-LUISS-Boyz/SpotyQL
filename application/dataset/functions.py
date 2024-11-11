@@ -95,7 +95,7 @@ def relate_track_to_playlists(connection: Connection):
         track_id,
         vendor_name
       ) VALUES (?, ?, ?)""", (
-        row[f'in_{vendor.lower()}_playlists'],
+        int(str(row[f'in_{vendor.lower()}_playlists']).replace(',', '')),
         index,
         vendor
       ))
