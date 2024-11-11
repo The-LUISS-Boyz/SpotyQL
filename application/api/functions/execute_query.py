@@ -22,9 +22,20 @@ def execute_query(connection, i):
 
 def execute_query_str(connection, str):
   try:
-    return StrQuery(str).execute_statement(connection)
+    return {
+      'type': 'success',
+      'result': StrQuery(str).execute_statement(connection) 
+    }
   except SQLError as e:
-    return str(e)
+    return {
+      'type': 'sql_error',
+      'result': str(e),
+      'traceback': e.__traceback__
+    }
   except Exception as e:
-    raise e
+    return {
+      'type': 'internal_error',
+      'result': str(e),
+      'traceback': e.__traceback__
+    }
     
