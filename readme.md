@@ -38,3 +38,15 @@ Simply change this option to "mysql" and add the relative parameters (i.e. usern
 
 ## Navigating the frontend
 
+This project features an interactive and dynamic frontend designed to provide a seamless user experience.
+
+The interface is built to be intuitive, with a header navigation across all pages. The header includes a clickable logo for quick access to the home page and a navigation menu with links to key sections such as Home, Discover, Credits, Logger, and Console.
+
+The Discover page provides an interactive environment for exploring SQL queries, with expandable boxes that reveal query details, descriptions, and results. Users can execute queries directly from the interface. 
+
+The Credits page highlights the contributors behind the project and includes an overview of its purpose and goals.
+
+The Logger page organizes log entries with timestamps and messages, offering a structured way to track system activities. 
+
+The Console page allows users to input and execute custom queries via a search bar, enhancing the interactive experience.
+
