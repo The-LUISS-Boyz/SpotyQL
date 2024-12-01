@@ -1,7 +1,6 @@
 {
     "frontend": {
-        "path": "./frontend/",
-        "_COMMENT": "todo: implement features"
+        "path": "./frontend/"
     },
     "database": {
         "type": "sqlite",
@@ -15,8 +14,7 @@
         "sql.path": "./sql/"
     },
     "dataset": {
-        "path": "./dataset.csv",
-        "_COMMENT": "todo: implement features"
+        "path": "./dataset.csv"
     },
     "info": {
         "name": "SpotyQL",
