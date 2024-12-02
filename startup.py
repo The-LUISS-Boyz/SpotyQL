@@ -52,43 +52,19 @@ def install_dependencies(venv_path: str):
   logger.info(log_message)
   
   # execute pip install -r requirements.txt
-  process = subprocess.Popen(
+  process = subprocess.run(
     [pip_path, "install", "-r", os.path.join(application_path, "requirements.txt")],
     text=True,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE
+    check=True
   )
-  process.wait()
   
-  # format output
-  stdout, stderr = process.communicate()
-  stdout = format_multiline_message(stdout)
-  stderr = format_multiline_message(stderr)
-  
-  exit_code = process.returncode
-  
-  if exit_code != 0:
-    logger_file = open("dep_install_startup.log", "a")
-    
-    log_message = compose_log_message(
-      datetime.now(),
-      "install_dependencies",
-      f"Subprocess {pip_path} failed:\n\t{stderr}",
-      "error"
-    )
-    logger_file.write(log_message)
-    logger_file.close()
-    
-    logger.error(log_message)
-    raise Exception(f"Subprocess {pip_path} failed (check dep_install_startup.log)")
-  else:
-    log_message = compose_log_message(
-      datetime.now(),
-      "install_dependencies",
-      f"Dependencies installed successfully:\n\t{stdout}",
-      "info"
-    )
-    logger.info(log_message)
+  log_message = compose_log_message(
+    datetime.now(),
+    "install_dependencies",
+    "Dependencies installed successfully",
+    "info"
+  )
+  logger.info(log_message)
 
 def initial_config(venv_path: str):
   logger = logging.getLogger("initial_config")

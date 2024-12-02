@@ -27,7 +27,7 @@ function toggleBox(index) {
         // Expand the box content
         content.style.height = content.scrollHeight + 'px';
         content.style.padding = '15px'; // Adding padding when expanded
-        icon.textContent = '▲';
+        icon.innerHTML = '&#9650;'; // Use HTML entity for the up arrow
 
         // Calculate the position to scroll to the center of the box
         const boxRect = boxes[index].getBoundingClientRect();
@@ -43,7 +43,7 @@ function toggleBox(index) {
         // Collapse the box content
         content.style.height = '0px';
         content.style.padding = '0';
-        icon.textContent = '▼';
+        icon.innerHTML = '&#9660;'; // Use HTML entity for the down arrow
     }
 }
 
@@ -104,12 +104,23 @@ function addConsoleResultBox(button, textBox) {
   `;
 
   // Await execution of query using the query text
-  window.pywebview.api.execute_query_str(query).then(result => {
+  window.pywebview.api.execute_query_str(query).then(command_result => {
+      const result = command_result.result;
+      const type = command_result.type;
+
       // Update the result box with the returned result
       resultBox.innerHTML = `
           <span class="console-close-btn" onclick="closeConsoleResultBox(this)">X</span>
           <pre><code>${result}</code></pre>
       `;
+
+      // Add a thin red bar at the bottom if the return type is not 'success'
+      if (type !== 'success') {
+          resultBox.style.borderBottom = '2px solid red';
+      }
+      else {
+        resultBox.style.borderBottom = '2px solid green';
+      }
   });
 
   // Append the result box to the container
