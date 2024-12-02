@@ -50,3 +50,11 @@ The Logger page organizes log entries with timestamps and messages, offering a s
 
 The Console page allows users to input and execute custom queries via a search bar, enhancing the interactive experience.
 
+## 🚨🚨 Emergency Procedure
+
+In case you encounter any error, or want to debug migrations, just send command
+
+<code>python startup.py reset</code>
+
+This will automatically RESET all instances of the database (both sqlite and mysql), and force the application to repeat data migrations.
+

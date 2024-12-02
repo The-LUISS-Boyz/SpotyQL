@@ -129,7 +129,36 @@ def load_application(venv_path: str):
   )
   
   exit(process.returncode)
-
+  
+def reset():
+  from json import load, dump
+  
+  logger = logging.getLogger("reset")
+  
+  logger.info("Resetting configuration")
+  with open("configuration.json", "r") as file:
+    configuration = load(file)
+  configuration["done_migrations"] = False
+  configuration["done_population"] = False
+  with open("configuration.json", "w") as file:
+    dump(configuration, file, indent=4)
+  
+  logger.info("Resetting database")
+  try:
+    os.system("rm -rf **.db")
+  except Exception as e:
+    logger.error(f"Error resetting database: {e}")
+  try:
+    command = "mysql -u {} -p{} -e 'DROP DATABASE IF EXISTS {}'".format(
+      configuration['database']['mysql.user'],
+      configuration['database']['mysql.password'],
+      configuration['database']['mysql.database']
+    )
+    print(command)
+    os.system(command)
+  except Exception as e:
+    logger.error(f"Error resetting database: {e}")
+  
 def main():
   logger = logging.getLogger("main")
   venv_path = sys.argv[1]
@@ -147,5 +176,7 @@ if __name__ == "__main__":
     print("Where <venv_path> is the desired path for the virtual environment")
     print("Example: python startup.py .env")
     sys.exit(1)
-  
-  main()
+  if sys.argv[1] == "reset":
+    reset()
+  else:
+    main()

@@ -4,3 +4,4 @@ jinja2
 fastapi
 pandas
 tabulate
+mysql-connector-python

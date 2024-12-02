@@ -3,13 +3,13 @@
         "path": "./frontend/"
     },
     "database": {
-        "type": "sqlite",
+        "type": "mysql",
         "_COMMENT": "for type sqlite set the sqlite.path variable",
         "sqlite.path": "./spotyql.db",
         "__COMMENT": "for type mysql set mysql properties to setup connection",
         "mysql.host": "localhost",
         "mysql.user": "root",
-        "mysql.password": "",
+        "mysql.password": "Nikinik1",
         "mysql.database": "spotyql",
         "sql.path": "./sql/"
     },

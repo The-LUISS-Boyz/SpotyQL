@@ -1,4 +1,4 @@
-from utils import configuration
+from utils.Configuration import configuration
 from sql import migrations_query
 import sqlite3
 from logger import log
@@ -15,3 +15,5 @@ def on_load(connection: sqlite3.Connection):
     log("Migrations already executed")
     
   populate_database(connection)
+  connection.commit()
+  connection.close()

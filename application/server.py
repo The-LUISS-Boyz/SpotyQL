@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse, Response
 import os
 from jinja2 import Template
 from utils import configuration, context
+import traceback
 
 router = APIRouter()
 
@@ -18,5 +19,6 @@ async def get_page(path: str):
     if path.endswith(".css"):
       return Response(content=rendered_content, media_type="text/css")
     return rendered_content
-  except FileNotFoundError:
+  except FileNotFoundError as e:
+    print(traceback.format_exc())
     return HTMLResponse(content="Page not found.", status_code=404)

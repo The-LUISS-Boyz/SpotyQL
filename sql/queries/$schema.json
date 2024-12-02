@@ -2,7 +2,8 @@
     {
         "name": "Basic Track Information",
         "description": "Fetches basic information about each track, including name, artist(s), and release date.",
-        "file_path": "basic_track_info.sql"
+        "file_path_sqlite": "basic_track_info.sqlite.sql",
+        "file_path_mysql": "basic_track_info.mysql.sql"
     },
     {
         "name": "Artist Collaborations",
@@ -17,22 +18,26 @@
     {
         "name": "Average Danceability by Release Year",
         "description": "Calculates the average danceability of tracks released each year, providing a year-over-year look at this characteristic.",
-        "file_path": "avg_danceability_by_year.sql"
+        "file_path_sqlite": "avg_danceability_by_year.sqlite.sql",
+        "file_path_mysql": "avg_danceability_by_year.mysql.sql"
     },
     {
         "name": "Tracks with Highest Playlist Count per Vendor",
         "description": "Finds the track(s) with the highest playlist count for each vendor, showing the most featured tracks on each platform.",
-        "file_path": "top_tracks_by_playlist_count_per_vendor.sql"
+        "file_path_sqlite": "top_tracks_by_playlist_count_per_vendor.sqlite.sql",
+        "file_path_mysql": "top_tracks_by_playlist_count_per_vendor.mysql.sql"
     },
     {
         "name": "Tracks' average rank across all vendors' charts",
         "description": "Lists tracks and their average rank across all vendors' charts.",
-        "file_path": "avg_track_rank.sql"
+        "file_path_sqlite": "avg_track_rank.sqlite.sql",
+        "file_path_mysql": "avg_track_rank.mysql.sql"
     },
     {
         "name": "Average Popularity (Track Count) by Release Month",
         "description": "Calculates the average number of playlist features for tracks released in each month, indicating seasonal popularity trends.",
-        "file_path": "avg_popularity_by_month.sql"
+        "file_path_sqlite": "avg_popularity_by_month.sqlite.sql",
+        "file_path_mysql": "avg_popularity_by_month.mysql.sql"
     },
     {
         "name": "Top 5 Artists by Total Playlist Features",
@@ -42,7 +47,8 @@
     {
         "name": "Year with Highest Average Chart Ranking",
         "description": "Computes the average count value in Track_Charts for each release year and returns the year with the highest average ranking, indicating the year with the highest-performing tracks.",
-        "file_path": "highest_avg_chart_ranking_year.sql"
+        "file_path_sqlite": "highest_avg_chart_ranking_year.sqlite.sql",
+        "file_path_mysql": "highest_avg_chart_ranking_year.mysql.sql"
     },
     {
         "name": "Distribution of Tracks by BPM Ranges and Mode",
@@ -57,6 +63,7 @@
     {
         "name": "Correlation Analysis Between Playlist Count and Chart Ranking",
         "description": "Analyzes the correlation between playlist count and chart ranking for each track, identifying potential patterns in playlist popularity and chart success.",
-        "file_path": "playlist_chart_correlation.sql"
+        "file_path_sqlite": "playlist_chart_correlation.sqlite.sql",
+        "file_path_mysql": "playlist_chart_correlation.mysql.sql"
     }
 ]
