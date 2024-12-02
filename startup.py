@@ -121,7 +121,10 @@ def reset():
   
   logger.info("Resetting database")
   try:
-    os.system("rm -rf **.db")
+    if os.name == "nt":
+      os.system("del /f /q *.db")
+    else:
+      os.system("rm -rf **.db")
   except Exception as e:
     logger.error(f"Error resetting database: {e}")
   try:
