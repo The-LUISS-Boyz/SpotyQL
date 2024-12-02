@@ -11,6 +11,9 @@ router = APIRouter()
 async def get_page(path: str):
   file_path = os.path.join(configuration.frontend_path, path)
   try:
+    if file_path.endswith(".png"):
+      return Response(content=open(file_path, "rb").read(), media_type="image/png")
+    
     with open(file_path, "r") as file:
       content = file.read()
       template = Template(content)

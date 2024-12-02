@@ -108,3 +108,9 @@ This folder contains the frontend code. The application is a vanilla HTML + CSS 
 ### Utils Folder (utils/)
 
 Util files used to explore the dataset at the very early stages of development.
+
+## Final Remarks
+
+"This project has been a challenge, but it gave us some great lessons. Even though the result is pretty good, I have personally learned to 'not overstep'. Taking on the project was a big assignment; adding a frontend, configuration and other sugar features has complicated things way more than expected."
+
+(Nicola Leone Ciardi)
