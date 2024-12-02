@@ -7,11 +7,13 @@ Welcome! This is our ultimate SQL project.
 We've decided to add a frontend interface, trying to merge all teachings we've gotten so far.
 
 This project assembles together teachings from:
-- introduction to CS (shoutout Alessio Martino)
+- introduction to CP
 - digital skills lab
 - Databases & Big Data
 
 ## How to execute
+
+Before executing, make sure you have configuration.json correctly set-up. More information about the configuration are in the next section of this readme.
 
 There is no need to install dependencies or initialize virtual environments.
 
@@ -32,7 +34,7 @@ This command will
 2. Install dependencies from application/requirements.txt
 3. Load application
 
-## Additional commentaries
+## Configuration file
 
 Inside the root of this project, we've set up a configuration file.
 
@@ -42,7 +44,13 @@ For performance purposes, the project has been initally created with sqlite3.
 There is, in any case, an option to change such behaviour.
 
 Inside configuration.json, look for "database". Inside such object, you'll find a parameter called "type".
-Simply change this option to "mysql" and add the relative parameters (i.e. username, password and connection url) and run the application. This should alter the execution and load the database inside the given MySQL server.
+Simply change this option to "mysql" and add the relative parameters (i.e. username, password and host url) and run the application. This should alter the execution and load the database inside the given MySQL server.
+
+PLEASE NOTE: when changing from mysql to sqlite and vice-versa, before loading the application be sure to execute
+
+<code>python startup.py reset</code>
+
+this will reset any changes made to the sqlite server / mysql server and will force the application to execute the migration again.
 
 ## Navigating the frontend
 
@@ -111,6 +119,6 @@ Util files used to explore the dataset at the very early stages of development.
 
 ## Final Remarks
 
-"This project has been a challenge, but it gave us some great lessons. Even though the result is pretty good, I have personally learned to 'not overstep'. Taking on the project was a big assignment; adding a frontend, configuration and other sugar features has complicated things way more than expected."
+"This project has been a challenge, but it gave us some great lessons. I have personally learned to 'not overstep'. Taking on the project was a big assignment; adding a frontend, configuration and other sugar features has complicated things way more than expected."
 
 (Nicola Leone Ciardi)

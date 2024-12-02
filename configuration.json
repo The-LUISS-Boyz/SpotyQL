@@ -9,7 +9,7 @@
         "__COMMENT": "for type mysql set mysql properties to setup connection",
         "mysql.host": "localhost",
         "mysql.user": "root",
-        "mysql.password": "Nikinik1",
+        "mysql.password": "",
         "mysql.database": "spotyql",
         "sql.path": "./sql/"
     },
@@ -46,6 +46,6 @@
         "width": 1280,
         "height": 720
     },
-    "done_migrations": true,
-    "done_population": true
+    "done_migrations": false,
+    "done_population": false
 }
