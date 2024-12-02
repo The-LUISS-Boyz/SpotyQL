@@ -9,7 +9,7 @@
         "__COMMENT": "for type mysql set mysql properties to setup connection",
         "mysql.host": "localhost",
         "mysql.user": "root",
-        "mysql.password": "Nikinik1",
+        "mysql.password": "your_password",
         "mysql.database": "spotyql",
         "sql.path": "./sql/"
     },
@@ -18,7 +18,7 @@
     },
     "info": {
         "name": "SpotyQL",
-        "version": "0.0.4",
+        "version": "1.0.0",
         "authors": [
             {
                 "name": "Angelo Misnik",
@@ -38,7 +38,7 @@
             },
             {
                 "name": "Emanuel Rizzo Rosas",
-                "matricola": "N/A"
+                "matricola": "296431"
             }
         ]
     },
@@ -46,6 +46,6 @@
         "width": 1280,
         "height": 720
     },
-    "done_migrations": true,
-    "done_population": true
+    "done_migrations": false,
+    "done_population": false
 }
